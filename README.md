@@ -69,4 +69,4 @@ Apex Research Labs provides drop-in wrappers for standard protocols, available o
 * **Encrypted OTA Packager**: Python CLI to package firmware binaries with APEX-256 for secure bootloaders.
 * **Zephyr RTOS Crypto API**: Native subsystem bindings.
 
-Visit **[apex256.io](https://apex256.io)** to sign the Evaluation NDA and provision your developer keys.
+Contact **info@apex256.com** to initiate commercial due diligence, sign the Evaluation NDA, and provision your developer keys on [apex256.io](https://apex256.io).
