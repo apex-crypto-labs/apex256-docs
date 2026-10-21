@@ -1,4 +1,4 @@
-# APEX-256 Public API & Architecture Documentation (v2.1.4.1)
+# APEX-256 Public API & Architecture Documentation (v2.1.6.4)
 
 This repository provides high-level architectural documentation and public C++ API signatures for the **APEX-256** cryptographic suite (`apex256_nano.h`), developed by **Apex Research Labs, LLC** (Inventor: Diab Anthony Sheteyh).
 
@@ -86,6 +86,7 @@ Licensees can selectively include any combination of the following companion pri
 | `APEX256_INCLUDE_CFB` | **APEX-CFB** (64-Bit Rotated Cipher Feedback) | `process_payload_cfb_tx(buf, len)`, `process_payload_cfb_rx(buf, len)` |
 | `APEX256_INCLUDE_FPE` | **APEX-FPE** (Branchless Numeric ASCII FPE) | `process_payload_fpe_tx(str, len)`, `process_payload_fpe_rx(str, len)` |
 | `APEX256_INCLUDE_STEALTH` | **APEX-STEALTH** (EM / Power SCA Equalizer) | `process_payload_stealth(buf, len)` |
+| `APEX256_INCLUDE_TAMPER` | **APEX-TAMPER** (Active Memory Integrity Guard) | `tamper_init(key, region, len)`, `tamper_verify_and_ratchet(...)` |
 
 ---
 
@@ -93,12 +94,15 @@ Licensees can selectively include any combination of the following companion pri
 
 Authenticated evaluators on [apex256.io](https://apex256.io) have access to:
 
-* **Build Forge (`/forge`):** Custom header compilation with `#ifdef` AST stripping and 3LZCF provenance sealing.
-* **Hardware Starter Kits (`/starter-projects`):** Ready-to-flash reference projects for **ESP32-S3 (ESP-IDF)**, **Nordic nRF52840 (Zephyr)**, **STM32F4 Cortex-M4 (CubeIDE / Bare-Metal)**, and **Raspberry Pi Pico (RP2040 SDK)**.
+* **Build Forge (`/forge`):** Custom header compilation with `#ifdef` AST stripping, BYOB custom hardware profiles, and 3LZCF provenance sealing.
+* **Hardware Starter Kits (`/starter-projects`):** Ready-to-flash reference projects for **ESP32-S3 (ESP-IDF)**, **Nordic nRF52840 (Zephyr)**, **STM32F4 Cortex-M4 (CubeIDE / Bare-Metal)**, **RISC-V (GD32VF103 / FE310)**, **Linux Userspace**, and **FPGA Soft-Core**.
+* **Cloud & Middleware SDKs (`/sdks/cloud`, `/sdks/middleware`, `/sdks/secure-boot`):** Reference bindings for Python, Rust, Go, Node.js, mbedTLS / WolfSSL, and Secure Bootloader templates.
 * **Embedded Calculators & Diagnostics:**
   * **Packet & MTU Budgeter (`/tools/packet-budgeter`):** LoRaWAN, BLE, and satellite airtime/battery analyzer.
-  * **DMA & Zero-Copy Alignment (`/tools/dma-calc`):** Cache-line and ping-pong DMA buffer planner.
+  * **DMA & Zero-Copy Alignment (`/tools/dma-calc`):** 64-bit BigInt cache-line and ping-pong DMA buffer planner.
   * **RTOS Stack Sizer (`/tools/rtos-sizer`):** FreeRTOS, Zephyr, and ThreadX task stack calculator.
+  * **OTA Firmware Packager (`/tools/ota-packager`) & Key Lifecycle Planner (`/tools/key-lifecycle`).**
+  * **Renode/QEMU Emulation Harnesses (`/tools/emulation-harnesses`) & Factory Provisioning (`/tools/provisioning`).**
   * **KAT Output Sandbox (`/tools/kat-verifier`) & 3LZCF Artifact Verifier (`/tools/verify-artifact`).**
 
 ---
