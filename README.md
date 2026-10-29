@@ -1,4 +1,4 @@
-# APEX-256 Public API & Architecture Documentation (v2.2.7.3)
+# APEX-256 Public API & Architecture Documentation (v2.2.8.0)
 
 This repository provides high-level architectural documentation and public C++ API signatures for the **APEX-256** cryptographic suite (`apex256_nano.h`), developed by **Apex Research Labs, LLC** (Inventor: Diab Anthony Sheteyh).
 
